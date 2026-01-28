@@ -804,21 +804,21 @@ window.playerGear={
             
             applyStats:function(stats,player){
                 
-                stats.capacityMultiplier*=2
-                stats.redFieldCapacity*=1.75
-                stats.redPollen*=1.75
-                stats.beeAttack*=1.25
+                stats.capacityMultiplier*=200
+                stats.redFieldCapacity*=100
+                stats.redPollen*=100
+                stats.beeAttack*=100
                 stats.instantFlameConversion=window.applyPercentage(stats.instantFlameConversion,0.5)
-                stats.flamePollen*=2
-                stats.redBeeAbilityRate*=1.2
-                stats.blueBeeAbilityRate*=1.2
-                stats.whiteBeeAbilityRate*=1.2
-                stats.defense+=0.35
+                stats.flamePollen*=200
+                stats.redBeeAbilityRate*=100
+                stats.blueBeeAbilityRate*=100
+                stats.whiteBeeAbilityRate*=100
+                stats.defense+=1000
                 player.addEffect('xFlamePassive')
                 player.addEffect('ignitePassive')
             },
             desc:'Embrace hate to take on the form of a Demon Bee. Become both extremely unpleasant and powerful.<br><br>x2 capacity<br>x1.75 red field capacity<br>x1.75 red pollen<br>+50% instant flame conversion<br>x2 flame pollen<br>x1.25 bee attack<br>+35% defense<br>+20% bee ability rate<br>+Passive: X Flame<br>+Passive: Ignite',
-            cost:['5000000000 honey','350 stinger','250 redExtract','100 enzymes','75 glue'],
+            cost:['0 honey','0 stinger','0 redExtract','0 enzymes','0 glue'],
         },
     },
     
@@ -961,7 +961,7 @@ window.playerGear={
             
             applyStats:function(stats,player){
                 
-                stats.capacity+=200
+                stats.capacity+=20000000000000000000000000000
             },
             desc:'A small bag.<br><br>+200 capacity',
             cost:['0 honey'],
@@ -1221,7 +1221,7 @@ window.playerGear={
                 player.addEffect('emergencyCoconutShieldPassive')
             },
             desc:'A back-mounted coconut that protects you during emergencies.<br><br>+2,500,000 capacity<br>x5 convert rate<br>+15% instant conversion<br>+10% instant white conversion<br>x1.25 pollen<br>x1.25 white pollen<br>+2 bee attack<br>+10% defense<br>x1.1 honey at hive<br>+Passive: Emergengy Coconut Shield<br>+Passive: Inspire Coconuts',
-            cost:['20000000000 honey','75 tropicalDrink','100 redExtract','100 blueExtract'],
+            cost:['0 honey','0 tropicalDrink','0 redExtract','0 blueExtract'],
         }
     },
     
