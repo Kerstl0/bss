@@ -17939,7 +17939,7 @@ function BeeSwarmSimulator(DATA){
         
         die(index){
             
-            let am=Math.ceil(Math.min((player.convertTotal+5000000)*player.bubbleBonus,player.pollen))
+            let am=Math.ceil(Math.min((player.convertTotal+500000000)*player.bubbleBonus,player.pollen))
             
             player.honey+=Math.ceil(am*2*player.honeyPerPollen)
             player.pollen-=am
@@ -27864,7 +27864,7 @@ function BeeSwarmSimulator(DATA){
                 cost:[n=>Math.floor(Math.pow(1.375,n)*1000000)+' honey'],
                 desc:'Increases the capacity of your hive, allowing you to hatch an additional bee!'
             }],
-            currentIndex:0,message:'Explore Top Shop'
+            currentIndex:25,message:'Explore Top Shop'
         },
 
         blueHQ:{
@@ -27922,6 +27922,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[-63.5-4.5*2,4.75,41.9],
                 displayRot:[10,180,0],
                 displayScale:[1.4,1.4,1.4],
+                owned:true
             },{
 
                 name:'tidePopper',
@@ -27929,6 +27930,7 @@ function BeeSwarmSimulator(DATA){
                 viewMatrix:[-63.9-4.5*3,2+2,40-5,Math.PI,-0.1],
                 displayPos:[-63.5-4.5*3,2,40],
                 displayScale:[1.5,1.5,1.5],
+                owned:true
             }],
             currentIndex:0,message:'Explore Blue HQ Shop'
         },
@@ -27979,6 +27981,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[40.5,7.75,29.25],
                 displayRot:[10,180,0],
                 displayScale:[1.4,1.4,1.4],
+                owned:true
             },{
 
                 amountPurchased:0,maxPurchasedAmount:1,
@@ -27994,6 +27997,7 @@ function BeeSwarmSimulator(DATA){
                 viewMatrix:[50-4,6+1,23.5-1.5,MATH.HALF_PI,-0.2],
                 displayPos:[50,6,23.5],
                 displayRot:[30,180,15],
+                owned:true
             }],
             currentIndex:0,message:'Explore Red HQ Shop'
         },
@@ -28231,7 +28235,7 @@ function BeeSwarmSimulator(DATA){
                 cost:[(n,i=1)=>Math.floor(Math.min(n*2500+25000,1000000)*i)+' honey'],
                 desc:'Can be fed to a bee to transform it into a different type!'
             }],
-            currentIndex:0,message:'Explore Royal Jelly Shop',currentIncrement:0,increments:[1,10,10e1,10e2,10e3,10e4]
+            currentIndex:100000000000000000000000000,message:'Explore Royal Jelly Shop',currentIncrement:0,increments:[1,10,10e1,10e2,10e3,10e4]
         },
 
         basicEgg:{
@@ -28338,49 +28342,49 @@ function BeeSwarmSimulator(DATA){
                 cost:['25 ticket'],
                 desc:'Can be used to hatch an epic, legendary, or mythic bee!<br><br>The bee has a small chance to be gifted!'
             },{
-                amountPurchased:0,maxPurchasedAmount:Infinity,
+                amountPurchased:10000,maxPurchasedAmount:Infinity,
                 name:'starTreat',
                 slot:'item',
                 viewMatrix:[28.25+2,4,-19.25,-MATH.HALF_PI,-0.2],
                 cost:['250 ticket'],
                 desc:'Can be fed to any bee to make it gifted!<br><br>It\s best to use Star Treats on event bees as it\'s the only way to make them gifted.'
             },{
-                amountPurchased:0,maxPurchasedAmount:1,
+                amountPurchased:1,maxPurchasedAmount:1,
                 name:'puppyBeeEgg',
                 slot:'item',
                 viewMatrix:[28.25+2,4,-21.25,-MATH.HALF_PI,-0.2],
                 cost:['150 ticket'],
                 desc:"This bee loves to play! It helps with bee bonding and will sometimes reward you treats by playing fetch!<br><br>(Honestly even with the buff in this version you still shouldn't buy it, it's rlly bad)"
             },{
-                amountPurchased:0,maxPurchasedAmount:1,
+                amountPurchased:1,maxPurchasedAmount:1,
                 name:'photonBeeEgg',
                 slot:'item',
                 viewMatrix:[28.25+2,4,-23.25,-MATH.HALF_PI,-0.2],
                 cost:['150 ticket'],
                 desc:'An entity made of pure light! Fires beams from the sky to collect massive amounts of pollen at once.'
             },{
-                amountPurchased:0,maxPurchasedAmount:1,
+                amountPurchased:1,maxPurchasedAmount:1,
                 name:'tabbyBeeEgg',
                 slot:'item',
                 viewMatrix:[33.75-2,4,-23.25,MATH.HALF_PI,-0.2],
                 cost:['150 ticket'],
                 desc:'An affectionate bee who becomes a harder worker as it warms up to you.'
             },{
-                amountPurchased:0,maxPurchasedAmount:1,
+                amountPurchased:1,maxPurchasedAmount:1,
                 name:'festiveBeeEgg',
                 slot:'item',
                 viewMatrix:[33.75-2,4,-21.25,MATH.HALF_PI,-0.2],
                 cost:['150 ticket'],
                 desc:'A generous bee who spreads the joy of Beesmas by occasionally hands out random gifts to you!'
             },{
-                amountPurchased:0,maxPurchasedAmount:1,
+                amountPurchased:1,maxPurchasedAmount:1,
                 name:'crimsonBeeEgg',
                 slot:'item',
                 viewMatrix:[33.75-2,4,-19.25,MATH.HALF_PI,-0.2],
                 cost:['75 ticket'],
                 desc:'Defender of all things red! Excels in hives with many red bees. Has enhanced abilities when working with Cobalt Bee.'
             },{
-                amountPurchased:0,maxPurchasedAmount:1,
+                amountPurchased:1,maxPurchasedAmount:1,
                 name:'cobaltBeeEgg',
                 slot:'item',
                 viewMatrix:[33.75-2,4,-17.25,MATH.HALF_PI,-0.2],
@@ -34758,4 +34762,5 @@ function BeeSwarmSimulator(DATA){
         window.objects=objects
     }
     
+
 }
