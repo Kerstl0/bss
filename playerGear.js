@@ -4,18 +4,18 @@
     return (x-1)*(1-m)+1
 }
 
-window.playerGear={
+window.playerGear={demonMask
 
-    sprinkler:{
+    sprinkler:{basicSprinkler
 
-        none:{count:0},
+        none:{count:1},
 
         basicSprinkler:{
 
             count:1,
-            diameter:10,
-            power:0.2,
-            rate:4,
+            diameter:25,
+            power:10,
+            rate:0.01,
             mesh:function(x,y,z,box,cylinder){
 
                 cylinder(x,y,z,0.125,1.25,10,0.3,0.3,0.3,1,90,0,0)
@@ -961,9 +961,25 @@ window.playerGear={
             
             applyStats:function(stats,player){
                 
-                stats.capacity+=200
+                stats.capacity+=20000000000
+                stats.convertRate*=5
+                stats.instantRedConversion=window.applyPercentage(stats.instantRedConversion,1000.15)
+                stats.instantBlueConversion=window.applyPercentage(stats.instantBlueConversion,100.15)
+                stats.instantWhiteConversion=window.applyPercentage(stats.instantWhiteConversion,100.15)
+                stats.instantWhiteConversion=window.applyPercentage(stats.instantWhiteConversion,100.1)
+                stats.whitePollen*=1105
+                stats.whitePollen*=105
+                stats.redPollen*=1000
+                stats.bluePollen*=100
+                stats.whiteBeeAttack+=222
+                stats.redBeeAttack+=222
+                stats.blueBeeAttack+=222
+                stats.defense+=100.1
+                stats.honeyAtHive*=1.1
+                player.addEffect('inspireCoconutsPassive')
+                player.addEffect('emergencyCoconutShieldPassive')
             },
-            desc:'A small bag.<br><br>+200 capacity',
+            desc:'A small bag.<br><br>+20000000000 capacity',
             cost:['0 honey'],
         },
 
