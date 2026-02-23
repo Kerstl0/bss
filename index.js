@@ -1722,7 +1722,7 @@ function BeeSwarmSimulator(DATA){
             },minX:-29.5,maxX:-21.5,minY:0.5,maxY:3.5,minZ:7.75,maxZ:11.75,message:'Use Royal Jelly Dispenser (6 Tickets)',func:function(player){
 
                 items.royalJelly.amount++
-                items.ticket.amount-=6
+                items.ticket.amount-=0
                 player.addEffect('haste',false,false,undefined,10)
                 player.updateInventory()
                 player.addMessage('Congrats you got scammed! 6 tickets is a big waste')
@@ -7756,7 +7756,7 @@ function BeeSwarmSimulator(DATA){
 
         ticket:{
             
-            amount:0,u:128*3/2048,v:128*10/2048,value:15,
+            amount:Infinity,u:128*3/2048,v:128*10/2048,value:15,
             use:function(){}
         },
 
@@ -22054,17 +22054,17 @@ function BeeSwarmSimulator(DATA){
                 if(beeInfo[out.discoveredBees[i]].rarity==='legendary') legendaryTypes++
             }
 
-            out.restrictionInfo.allowed_5=amountOfBees>=5?true:'You need 5 bees to enter the 5 Bee Zone!'
-            out.restrictionInfo.allowed_10=amountOfBees>=10?true:'You need 10 bees to enter the 10 Bee Zone!'
-            out.restrictionInfo.allowed_15=amountOfBees>=15?true:'You need 15 bees to enter the 15 Bee Zone!'
-            out.restrictionInfo.allowed_20=amountOfBees>=20?true:'You need 20 bees to enter the 20 Bee Zone!'
-            out.restrictionInfo.allowed_25=amountOfBees>=25?true:'You need 25 bees to enter the 25 Bee Zone!'
-            out.restrictionInfo.allowed_30=amountOfBees>=30?true:'You need 30 bees to enter the 30 Bee Zone!'
-            out.restrictionInfo.allowed_35=amountOfBees>=35?true:'You need 35 bees to enter the 35 Bee Zone!'
-            out.restrictionInfo.allowed_redHQ=redTypes>=4?true:'Discover 4 red bee types to enter the Red HQ!'
+            out.restrictionInfo.allowed_5=amountOfBees>=0?true:'You need 5 bees to enter the 5 Bee Zone!'
+            out.restrictionInfo.allowed_10=amountOfBees>=0?true:'You need 10 bees to enter the 10 Bee Zone!'
+            out.restrictionInfo.allowed_15=amountOfBees>=0?true:'You need 15 bees to enter the 15 Bee Zone!'
+            out.restrictionInfo.allowed_20=amountOfBees>=0?true:'You need 20 bees to enter the 20 Bee Zone!'
+            out.restrictionInfo.allowed_25=amountOfBees>=0?true:'You need 25 bees to enter the 25 Bee Zone!'
+            out.restrictionInfo.allowed_30=amountOfBees>=0?true:'You need 30 bees to enter the 30 Bee Zone!'
+            out.restrictionInfo.allowed_35=amountOfBees>=0?true:'You need 35 bees to enter the 35 Bee Zone!'
+            out.restrictionInfo.allowed_redHQ=redTypes>=0?true:'Discover 4 red bee types to enter the Red HQ!'
             out.restrictionInfo.allowed_blueHQ=blueTypes>=0?true:'Discover 0 blue bee types to enter the Blue HQ!'
-            out.restrictionInfo.allowed_sprinkler=legendaryTypes>=1?true:'Discover 1 legendary bee type to enter the Sprinkler Shop!'
-            out.restrictionInfo.allowed_ace=epicTypes>=5?true:'Discover 5 epic bee types to enter the Ace Shop!'
+            out.restrictionInfo.allowed_sprinkler=legendaryTypes>=0?true:'Discover 1 legendary bee type to enter the Sprinkler Shop!'
+            out.restrictionInfo.allowed_ace=epicTypes>=0?true:'Discover 5 epic bee types to enter the Ace Shop!'
             out.restrictionInfo.allowed_dapper=out.currentGear.mask!=='helmet'&&out.currentGear.mask!=='none'&&out.currentGear.boots!=='basicBoots'&&out.currentGear.boots!=='none'?true:'You must wear a nice hat and cool boots to enter the Dapper Shop!'
             out.restrictionInfo.allowed_cocoCave=!out.extraInfo.mob_coco||out.extraInfo.mob_coco<=0
 
@@ -27859,14 +27859,14 @@ function BeeSwarmSimulator(DATA){
                 displayScale:[1.25,1.25,1.25],
                 owned:true
             },{
-                amountPurchased:0,maxPurchasedAmount:25,
+                amountPurchased:99999999,maxPurchasedAmount:99999999,
                 name:'hiveSlot',
                 slot:'item',
                 viewMatrix:[-10,37,74,MATH.HALF_PI,0],
-                cost:[n=>Math.floor(Math.pow(1.375,n)*1000000)+' honey'],
+                cost:[n=>Math.floor(Math.pow(1.375,n)*0)+' honey'],
                 desc:'Increases the capacity of your hive, allowing you to hatch an additional bee!'
             }],
-            currentIndex:25,message:'Explore Top Shop'
+            currentIndex:99999999,message:'Explore Top Shop'
         },
 
         blueHQ:{
@@ -27953,6 +27953,7 @@ function BeeSwarmSimulator(DATA){
                 viewMatrix:[43+0.7-2.15,3.75+1,28-2.5,Math.PI,-0.3],
                 displayPos:[43-2.15,3.75,28],
                 displayScale:[1.9,1.9,1.9],
+                owned:true
             },{
 
                 name:'rileyGuard',
@@ -28022,6 +28023,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[74.25,16.5-1,58.5+1],
                 displayRot:[0,90,0],
                 displayScale:[1.6,1.6,1.6],
+                owned:true
             },{
 
                 name:'honeycombBelt',
@@ -28038,6 +28040,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[74.25,16.5-1,58.5-1],
                 displayRot:[0,90,0],
                 displayScale:[1.6,1.6,1.6],
+                owned:true
             }],
             currentIndex:0,message:'Explore Ace Shop'
         },
@@ -28068,6 +28071,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[69.15,10.7,-44],
                 displayRot:[0,0,0],
                 displayScale:[3,3,3],
+                owned:true
             }],
             currentIndex:0,message:'Explore Petal Shop'
         },
@@ -28261,7 +28265,7 @@ function BeeSwarmSimulator(DATA){
                 name:'stinger',
                 slot:'item',
                 viewMatrix:[-25.4+1.8,8.5,-36-4,Math.PI+0.33,0.02],
-                cost:[(n,i=1)=>(5*i)+' ticket'],
+                cost:[(n,i=1)=>(1*i)+' ticket'],
                 desc:'Can be used to temporarily increase bee attack by x1.5 for 45s!'
             }],
             currentIndex:0,message:'Explore Stinger Shop',currentIncrement:0,increments:[1,10,10e1]
@@ -28287,7 +28291,7 @@ function BeeSwarmSimulator(DATA){
                 name:'ticket',
                 slot:'item',
                 viewMatrix:[-11.75-4.5,35,88.25-4.5,MATH.HALF_PI+MATH.QUATER_PI,0.02],
-                cost:[(n,i=1)=>Math.min(Math.floor(5000*Math.pow(1.003,n)*i),1000000000000)+' honey'],
+                cost:[(n,i=1)=>Math.min(Math.floor(1*Math.pow(1.003,n)*i),0)+' honey'],
                 desc:'Can be used to purchase special items and activate machines!'
             }],
             currentIndex:0,message:'Explore Ticket Shop',currentIncrement:0,increments:[1,10,10e1,50e1]
@@ -34766,5 +34770,6 @@ function BeeSwarmSimulator(DATA){
     
 
 }
+
 
 
