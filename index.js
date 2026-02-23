@@ -1846,11 +1846,11 @@ function BeeSwarmSimulator(DATA){
             isMachine:true,requirements:function(player){
 
                 if(items.viciousBeeEgg.amount) return 'You already own a Vicious Bee!'
-                if(items.stinger.amount<200) return 'Turn in 200 stingers to claim a Vicious Bee!'
+                if(items.stinger.amount<1) return 'Turn in 200 stingers to claim a Vicious Bee!'
 
             },minX:2-3,maxX:2+3,minY:2,maxY:9,minZ:60-3,maxZ:60+3,message:'Turn in 200 stingers to claim a Vicious Bee',func:function(player){
 
-                items.stinger.amount-=200
+                items.stinger.amount-=1
                 items.viciousBeeEgg.amount++
                 player.updateInventory()
                 player.addMessage('🎉 You claimed a Vicious Bee! 🎉',[0,0,0])
@@ -21382,8 +21382,8 @@ function BeeSwarmSimulator(DATA){
         shovel:{
             
             collectPattern:[[0,0],[0,-1]],
-            collectAmount:2,
-            cooldown:0.8,
+            collectAmount:20000000,
+            cooldown:0.1,
             mesh:function(box,cylinder,sphere,star){
                 
                 box(-0.3,0,0.6,0.1,0.1,0.8,false,[0.5,0.2,0])
@@ -22062,7 +22062,7 @@ function BeeSwarmSimulator(DATA){
             out.restrictionInfo.allowed_30=amountOfBees>=30?true:'You need 30 bees to enter the 30 Bee Zone!'
             out.restrictionInfo.allowed_35=amountOfBees>=35?true:'You need 35 bees to enter the 35 Bee Zone!'
             out.restrictionInfo.allowed_redHQ=redTypes>=4?true:'Discover 4 red bee types to enter the Red HQ!'
-            out.restrictionInfo.allowed_blueHQ=blueTypes>=4?true:'Discover 4 blue bee types to enter the Blue HQ!'
+            out.restrictionInfo.allowed_blueHQ=blueTypes>=0?true:'Discover 0 blue bee types to enter the Blue HQ!'
             out.restrictionInfo.allowed_sprinkler=legendaryTypes>=1?true:'Discover 1 legendary bee type to enter the Sprinkler Shop!'
             out.restrictionInfo.allowed_ace=epicTypes>=5?true:'Discover 5 epic bee types to enter the Ace Shop!'
             out.restrictionInfo.allowed_dapper=out.currentGear.mask!=='helmet'&&out.currentGear.mask!=='none'&&out.currentGear.boots!=='basicBoots'&&out.currentGear.boots!=='none'?true:'You must wear a nice hat and cool boots to enter the Dapper Shop!'
@@ -27849,6 +27849,7 @@ function BeeSwarmSimulator(DATA){
                 displayRot:[0,94,0],
                 displayPos:[-16.5,34.5+4.25,77.4-5],
                 displayScale:[1,1,1],
+                owned:true
             },{
                 name:'porcelainOHive',
                 slot:'backpack',
@@ -27856,6 +27857,7 @@ function BeeSwarmSimulator(DATA){
                 displayRot:[-8,-85,4],
                 displayPos:[-16.75,35.35+4.25,77.5-7.5],
                 displayScale:[1.25,1.25,1.25],
+                owned:true
             },{
                 amountPurchased:0,maxPurchasedAmount:25,
                 name:'hiveSlot',
@@ -34764,3 +34766,4 @@ function BeeSwarmSimulator(DATA){
     
 
 }
+
