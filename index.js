@@ -9109,7 +9109,7 @@ function BeeSwarmSimulator(DATA){
             use:function(){
                 feedTreat({
                     type:'starTreat',
-                    treatBond:1000,
+                    treatBond:100000000,
                     func:(slot,amount)=>{
                         if(slot.gifted)return
                         slot.gifted=true
@@ -22054,17 +22054,17 @@ function BeeSwarmSimulator(DATA){
                 if(beeInfo[out.discoveredBees[i]].rarity==='legendary') legendaryTypes++
             }
 
-            out.restrictionInfo.allowed_5=amountOfBees>=0?true:'You need 5 bees to enter the 5 Bee Zone!'
-            out.restrictionInfo.allowed_10=amountOfBees>=0?true:'You need 10 bees to enter the 10 Bee Zone!'
-            out.restrictionInfo.allowed_15=amountOfBees>=0?true:'You need 15 bees to enter the 15 Bee Zone!'
-            out.restrictionInfo.allowed_20=amountOfBees>=0?true:'You need 20 bees to enter the 20 Bee Zone!'
-            out.restrictionInfo.allowed_25=amountOfBees>=0?true:'You need 25 bees to enter the 25 Bee Zone!'
-            out.restrictionInfo.allowed_30=amountOfBees>=0?true:'You need 30 bees to enter the 30 Bee Zone!'
-            out.restrictionInfo.allowed_35=amountOfBees>=0?true:'You need 35 bees to enter the 35 Bee Zone!'
-            out.restrictionInfo.allowed_redHQ=redTypes>=0?true:'Discover 4 red bee types to enter the Red HQ!'
+            out.restrictionInfo.allowed_5=amountOfBees>=0?true:'You need 0 bees to enter the 5 Bee Zone!'
+            out.restrictionInfo.allowed_10=amountOfBees>=0?true:'You need 0 bees to enter the 10 Bee Zone!'
+            out.restrictionInfo.allowed_15=amountOfBees>=0?true:'You need 0 bees to enter the 15 Bee Zone!'
+            out.restrictionInfo.allowed_20=amountOfBees>=0?true:'You need 0 bees to enter the 20 Bee Zone!'
+            out.restrictionInfo.allowed_25=amountOfBees>=0?true:'You need 0 bees to enter the 25 Bee Zone!'
+            out.restrictionInfo.allowed_30=amountOfBees>=0?true:'You need 0 bees to enter the 30 Bee Zone!'
+            out.restrictionInfo.allowed_35=amountOfBees>=0?true:'You need 0 bees to enter the 35 Bee Zone!'
+            out.restrictionInfo.allowed_redHQ=redTypes>=0?true:'Discover 0 red bee types to enter the Red HQ!'
             out.restrictionInfo.allowed_blueHQ=blueTypes>=0?true:'Discover 0 blue bee types to enter the Blue HQ!'
-            out.restrictionInfo.allowed_sprinkler=legendaryTypes>=0?true:'Discover 1 legendary bee type to enter the Sprinkler Shop!'
-            out.restrictionInfo.allowed_ace=epicTypes>=0?true:'Discover 5 epic bee types to enter the Ace Shop!'
+            out.restrictionInfo.allowed_sprinkler=legendaryTypes>=0?true:'Discover 0 legendary bee type to enter the Sprinkler Shop!'
+            out.restrictionInfo.allowed_ace=epicTypes>=0?true:'Discover 0 epic bee types to enter the Ace Shop!'
             out.restrictionInfo.allowed_dapper=out.currentGear.mask!=='helmet'&&out.currentGear.mask!=='none'&&out.currentGear.boots!=='basicBoots'&&out.currentGear.boots!=='none'?true:'You must wear a nice hat and cool boots to enter the Dapper Shop!'
             out.restrictionInfo.allowed_cocoCave=!out.extraInfo.mob_coco||out.extraInfo.mob_coco<=0
 
@@ -28348,11 +28348,11 @@ function BeeSwarmSimulator(DATA){
                 cost:['25 ticket'],
                 desc:'Can be used to hatch an epic, legendary, or mythic bee!<br><br>The bee has a small chance to be gifted!'
             },{
-                amountPurchased:10000,maxPurchasedAmount:Infinity,
+                amountPurchased:0,maxPurchasedAmount:Infinity,
                 name:'starTreat',
                 slot:'item',
                 viewMatrix:[28.25+2,4,-19.25,-MATH.HALF_PI,-0.2],
-                cost:['250 ticket'],
+                cost:['0 ticket'],
                 desc:'Can be fed to any bee to make it gifted!<br><br>It\s best to use Star Treats on event bees as it\'s the only way to make them gifted.'
             },{
                 amountPurchased:1,maxPurchasedAmount:1,
@@ -28418,6 +28418,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[2.85,1004.3,1005.5],
                 displayRot:[10,-20,0],
                 displayScale:[1.5,1.5,1.5],
+                owned:true
             },{
 
                 name:'gummyBaller',
@@ -28440,6 +28441,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[10.75,14.9,-34.5],
                 displayRot:[0,-100,0],
                 displayScale:[1.2,1.2,1.2],
+                owned:true
             },{
 
                 name:'coconutClogs',
@@ -34770,6 +34772,7 @@ function BeeSwarmSimulator(DATA){
     
 
 }
+
 
 
 
