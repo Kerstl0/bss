@@ -27766,6 +27766,7 @@ function BeeSwarmSimulator(DATA){
                 displayRot:[-20,0,20],
                 displayPos:[-38.5,18.25,91.5],
                 displayScale:[1,1,1],
+                owned:true
             },{
                 name:'propellerHat',
                 slot:'mask',
@@ -27807,6 +27808,7 @@ function BeeSwarmSimulator(DATA){
                 displayRot:[0,87,0],
                 displayPos:[-16.7,35.25,77.5],
                 displayScale:[1.45,1.45,1.45],
+                owned:true
             },{
                 name:'mondoBeltBag',
                 slot:'belt',
@@ -27814,6 +27816,7 @@ function BeeSwarmSimulator(DATA){
                 displayRot:[0,97,0],
                 displayPos:[-16.7,35.1,77.5-2.5],
                 displayScale:[1.7,1.7,1.7],
+                owned:true
             },{
                 name:'beekeeperMask',
                 slot:'mask',
@@ -27828,6 +27831,7 @@ function BeeSwarmSimulator(DATA){
                 displayRot:[0,60,20],
                 displayPos:[-16.4,34.5,77.5-7.5],
                 displayScale:[0.6,0.6,0.6],
+                owned:true
             },{
                 name:'goldenRake',
                 slot:'tool',
@@ -27893,6 +27897,7 @@ function BeeSwarmSimulator(DATA){
                 viewMatrix:[-63.5-2.75*2,0.3+1,40.5-3,Math.PI,-0.3],
                 displayPos:[-63-2.75*2,0.3,40.5],
                 displayScale:[1.9,1.9,1.9],
+                owned:true
             },{
 
                 name:'buckoGuard',
@@ -27968,6 +27973,7 @@ function BeeSwarmSimulator(DATA){
                 viewMatrix:[43+0.7-2.15*3,3.75+1,28-2.5,Math.PI,-0.3],
                 displayPos:[44.5-2.15*3,3.75,28],
                 displayRot:[5,-70,10],
+                owned:true
             },{
 
                 name:'redPortOHive',
@@ -28032,6 +28038,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[74.75,16.5-2.5,58.5],
                 displayRot:[0,-90,0],
                 displayScale:[2,2,2],
+                owned:true
             },{
 
                 name:'crimsonGuard',
@@ -28055,6 +28062,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[65.5,10,-43.6],
                 displayRot:[30,50,-10],
                 displayScale:[1,1,1],
+                owned:true
             },{
 
                 amountPurchased:0,maxPurchasedAmount:1,
@@ -28241,7 +28249,7 @@ function BeeSwarmSimulator(DATA){
                 cost:[(n,i=1)=>Math.floor(Math.min(n*2500+25000,1000000)*i)+' honey'],
                 desc:'Can be fed to a bee to transform it into a different type!'
             }],
-            currentIndex:100000000000000000000000000,message:'Explore Royal Jelly Shop',currentIncrement:0,increments:[1,10,10e1,10e2,10e3,10e4]
+            currentIndex:0,message:'Explore Royal Jelly Shop',currentIncrement:0,increments:[1,10,10e1,10e2,10e3,10e4]
         },
 
         basicEgg:{
@@ -28320,6 +28328,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[29,31,92.5],
                 displayRot:[20,180,0],
                 displayScale:[1.5,1.5,1.5],
+                owned:true
             }],
             currentIndex:0,message:'View Diamond Mask'
         },
@@ -28334,6 +28343,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[-61.5,2.5,-11.5],
                 displayRot:[0,90,-20],
                 displayScale:[1.5,1.5,1.5],
+                owned:true
             }],
             currentIndex:0,message:'View Demon Mask'
         },
@@ -28450,6 +28460,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[10.75,14.9,-38.5],
                 displayRot:[0,82,0],
                 displayScale:[1.45,1.45,1.45],
+                owned:true
             }],
             currentIndex:0,message:'Explore Coconut Cave Shop'
         },
@@ -28496,6 +28507,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[48,14,55.075],
                 displayRot:[0,90,0],
                 displayScale:[1.2,1.2,1.2],
+                owned:true
             }],
             currentIndex:0,message:'Explore Sprinkler Shop'
         },
@@ -34772,6 +34784,7 @@ function BeeSwarmSimulator(DATA){
     
 
 }
+
 
 
 
