@@ -519,18 +519,18 @@ function BeeSwarmSimulator(DATA){
         {item:'oil',req:[['sunflowerSeed',35],['royalJelly',5]]},
         {item:'glue',req:[['gumdrops',10],['royalJelly',5]]},
         {item:'tropicalDrink',req:[['coconut',5],['oil',1],['enzymes',1]]},
-        {item:'glitter',req:[['moonCharm',5],['magicBean',1]]},
+        {item:'glitter',req:[['moonCharm',0],['magicBean',0]]},
         {item:'starJelly',req:[['royalJelly',75],['glitter',3]]},
         {item:'purplePotion',req:[['neonberry',3],['redExtract',1],['blueExtract',1],['glue',1]]},
-        {item:'superSmoothie',req:[['neonberry',3],['starJelly',1],['purplePotion',1],['tropicalDrink',2]]},
+        {item:'superSmoothie',req:[['neonberry',0],['starJelly',0],['purplePotion',0],['tropicalDrink',0]]},
         {item:'fieldDice',req:[['softWax',1],['whirligig',1],['redExtract',1],['blueExtract',1]]},
         {item:'smoothDice',req:[['fieldDice',2],['whirligig',2],['softWax',2],['oil',2]]},
-        {item:'loadedDice',req:[['smoothDice',2],['hardWax',1],['oil',2],['glue',1]]},
+        {item:'loadedDice',req:[['smoothDice',0],['hardWax',0],['oil',0],['glue',0]]},
         {item:'softWax',req:[['honeysuckle',3],['oil',1],['enzymes',1],['royalJelly',5]]},
         {item:'hardWax',req:[['softWax',2],['enzymes',1],['bitterberry',3],['royalJelly',5]]},
         {item:'swirledWax',req:[['hardWax',1],['softWax',2],['purplePotion',1],['royalJelly',15]]},
         {item:'causticWax',req:[['hardWax',2],['neonberry',5],['gumdrops',10],['royalJelly',25]]},
-        {item:'turpentine',req:[['superSmoothie',3],['causticWax',3],['starJelly',5],['honeysuckle',50]]},
+        {item:'turpentine',req:[['superSmoothie',0],['causticWax',0],['starJelly',0],['honeysuckle',0]]},
         {item:'diamondEgg',req:[['goldEgg',1],['swirledWax',1],['royalJelly',100]]},
 
     ],windShrineDonations=[
@@ -585,7 +585,7 @@ function BeeSwarmSimulator(DATA){
         {item:'giftedSilverEgg',rewardType:'winds',rewardAmount:11},
         {item:'giftedGoldEgg',rewardType:'winds',rewardAmount:12},
         {item:'giftedDiamondEgg',rewardType:'winds',rewardAmount:13},
-        {item:'giftedMythicEgg',rewardType:'winds',rewardAmount:14},
+        {item:'giftedMythicEgg',rewardType:'winds',rewardAmount:10000},
         {item:'starEgg',rewardType:'winds',rewardAmount:14},
 
     ]
@@ -26150,7 +26150,7 @@ function BeeSwarmSimulator(DATA){
 
                     window.setTimeout(function(){
 
-                        if(items.windyBeeEgg.amount>0){
+                        if(items.windyBeeEgg.amount>999){
 
                             player.addMessage('Hey! Stop being greedy! You have a Windy Bee already! >:(',COLORS.redArr)
                             return
@@ -26189,7 +26189,7 @@ function BeeSwarmSimulator(DATA){
                         items.jellyBeans.amount+=10
                         items.purplePotion.amount+=5
                         items.honeysuckle.amount+=25
-                        items.gumdrops.amount+=50
+                        items.gumdrops.amount+=5
                         out.updateInventory()
                         out.addEffect('galentineBlessing')
                         player.extraInfo.activatedGalentine=1
@@ -26200,7 +26200,7 @@ function BeeSwarmSimulator(DATA){
 
                 window.setTimeout(function(){
 
-                    if(windShrineDonations[out.shrineIndex].item==='spiritPetal'&&items.windyBeeEgg.amount>0) return
+                    if(windShrineDonations[out.shrineIndex].item==='spiritPetal'&&items.windyBeeEgg.amount>99) return
 
                     let info=windShrineDonations[out.shrineIndex],amountOfTokens,amountDonated=windShrineDonations[out.shrineIndex].item==='spiritPetal'?1000:document.getElementById('shrineAmount').value
 
@@ -27863,14 +27863,14 @@ function BeeSwarmSimulator(DATA){
                 displayScale:[1.25,1.25,1.25],
                 owned:true
             },{
-                amountPurchased:99999999,maxPurchasedAmount:99999999,
+                amountPurchased:0,maxPurchasedAmount:250,
                 name:'hiveSlot',
                 slot:'item',
                 viewMatrix:[-10,37,74,MATH.HALF_PI,0],
                 cost:[n=>Math.floor(Math.pow(1.375,n)*0)+' honey'],
                 desc:'Increases the capacity of your hive, allowing you to hatch an additional bee!'
             }],
-            currentIndex:99999999,message:'Explore Top Shop'
+            currentIndex:1,message:'Explore Top Shop'
         },
 
         blueHQ:{
@@ -28065,7 +28065,7 @@ function BeeSwarmSimulator(DATA){
                 owned:true
             },{
 
-                amountPurchased:0,maxPurchasedAmount:1,
+                amountPurchased:1,maxPurchasedAmount:1,
                 name:'petalPlanter',
                 slot:'item',
                 viewMatrix:[67.5,13.5,-39,0,0],
@@ -28420,6 +28420,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[-2.75,1003.2,1005.5],
                 displayRot:[10,20,0],
                 displayScale:[1.5,1.5,1.5],
+                owned:true
             },{
 
                 name:'gummyBoots',
@@ -28437,6 +28438,7 @@ function BeeSwarmSimulator(DATA){
                 displayPos:[0,1005.8,1005],
                 displayRot:[20,0,-30],
                 displayScale:[0.9,0.9,0.9],
+                owned:true
             }],
             currentIndex:0,message:'Explore Gummy Lair Shop'
         },
@@ -33892,6 +33894,9 @@ function BeeSwarmSimulator(DATA){
         }
 
         items.giftedMythicEgg.amount=10000000
+        items.windybeeegg.amount=10000
+        items.superSmoothie.amount=infinite
+        items.loadedDice.amount=infinite
         player.updateInventory()
 
         let tut=['Welcome to Bee Swarm Simulator!',5000,'Click the egg icon on the bar on','the left to open your inventory!',4000,'Click on the Basic Egg to select it!',4000,'Hover your mouse over a hive slot','and click to hatch it!',4000,'Collect pollen in fields with your bee!',4000,'After filling up your bag, stand near','your hive to convert the pollen into honey!',4000,'Use honey to buy more bee eggs and new tools!',5000,'Talk to bears and complete their quests!',3000,'Have fun!'],t=1000
@@ -34784,6 +34789,7 @@ function BeeSwarmSimulator(DATA){
     
 
 }
+
 
 
 
